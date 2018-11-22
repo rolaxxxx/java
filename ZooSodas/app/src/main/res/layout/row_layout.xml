@@ -1,0 +1,24 @@
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayoutRow"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <CheckBox
+        android:id="@+id/checkBoxServEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/uzduotiesPatvirtinimas"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+
+        android:text="patvirtinti uzbaigta uzduoti " />
+    <Button
+        android:id="@+id/UzduotiesIstrinimas"
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
+
+        android:text="istrinti uzduoti" />
+</TableRow>
