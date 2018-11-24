@@ -24,19 +24,44 @@ import java.util.List;
 public class DarbuotojuValdymas extends Fragment  implements AdapterView.OnItemSelectedListener {
     View myView;
     public static  ArrayList<Darbuotojas> darbuotojai= new ArrayList<>();
+    Darbuotojas temporDarb=new Darbuotojas();
+    EditText vardas;
+    EditText pavarde;
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         myView = inflater.inflate(R.layout.first_layout, container, false);
+         vardas= (EditText)myView.findViewById(R.id.DarbuotojoVardas);
+         pavarde = (EditText)myView.findViewById(R.id.DarbuotojoPavarde);
+         vardas.setHint("Iveskite Vartotojo varda");
+         pavarde.setHint("Iveskite Vartotojo pavarde");
 
-
+         temporDarb.vardas=" ";
+         temporDarb.pavarde=" ";
+         temporDarb.priskirtaKategorija=" ";
+        darbuotojai.add(0,temporDarb);
          ArrayList<String> gyvunaikategorijai = new ArrayList<>();
          gyvunaikategorijai.addAll(GyvunuValdymas.gyvunai);
 
-//        for (int i = 0; i < valdymas.gyvunai.size(); i++) {
-//            gyvunaikategorijai.add(i, valdymas.gyvunai.get(i));
-//        }
+        vardas.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus)
+                    vardas.setHint("");
+                else
+                    vardas.setHint("Iveskite Vartotojo varda");
+            }
+        });
+        pavarde.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus)
+                    pavarde.setHint("");
+                else
+                    pavarde.setHint("Iveskite Vartotojo pavarde");
+            }
+        });
             Spinner spinner = myView.findViewById(R.id.GyvunuKategorijosDarbuotojuKlaseje);
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity().getBaseContext(), android.R.layout.simple_list_item_1, gyvunaikategorijai);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -53,12 +78,13 @@ public class DarbuotojuValdymas extends Fragment  implements AdapterView.OnItemS
         String text = adapterView.getItemAtPosition(i).toString();
         Toast.makeText(adapterView.getContext(), "pasirinktas itemas " + text, Toast.LENGTH_SHORT).show();
         Button button = (Button) myView.findViewById(R.id.Idarbinti_Darbuotoja);
+
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Darbuotojas tempdarbuotojas= new Darbuotojas();
-                EditText vardas = (EditText)myView.findViewById(R.id.DarbuotojoVardas);
-                EditText pavarde = (EditText)myView.findViewById(R.id.DarbuotojoPavarde);
+                 vardas = (EditText)myView.findViewById(R.id.DarbuotojoVardas);
+                 pavarde = (EditText)myView.findViewById(R.id.DarbuotojoPavarde);
                 String getVardas= vardas.getText().toString();
                 String getPavarde= pavarde.getText().toString();
                 String getKategorija= GyvunuValdymas.gyvunai.get(i);

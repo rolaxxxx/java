@@ -12,7 +12,7 @@
         android:layout_marginTop="52dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="iveskite uzduoti" />
+         />
 
     <Spinner
         android:id="@+id/specifinisGyvunas"

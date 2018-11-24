@@ -1,24 +1,50 @@
-<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/LinearLayoutRow"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingTop="3dp">
 
+    <TextView
+        android:id="@+id/Uzduotis"
+        android:layout_width="0dip"
+        android:layout_height="41dp"
+        android:layout_margin="4dp"
+        android:layout_weight="2.83"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:text=""
+        android:textSize="10dp"
+        android:clickable="true">
+    </TextView>
+    <TextView
+        android:id="@+id/Darbuotojas"
+        android:layout_width="0dip"
+        android:layout_height="41dp"
+        android:layout_margin="4dp"
+        android:layout_weight="2.83"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:text=""
+        android:textSize="10dp"
+        android:clickable="true"
+        >
 
-    <CheckBox
-        android:id="@+id/checkBoxServEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    </TextView>
 
     <Button
-        android:id="@+id/uzduotiesPatvirtinimas"
-        android:layout_width="181dp"
+        android:id="@+id/patvirtintiUzduoti"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-
-        android:text="patvirtinti uzbaigta uzduoti " />
+        android:layout_weight="2.83"
+        android:text="Button" />
     <Button
-        android:id="@+id/UzduotiesIstrinimas"
-        android:layout_width="wrap_content"
-        android:layout_height="39dp"
+        android:id="@+id/AtmestiUzduoti"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.83"
+        android:text="Button" />
 
-        android:text="istrinti uzduoti" />
-</TableRow>
+</LinearLayout>

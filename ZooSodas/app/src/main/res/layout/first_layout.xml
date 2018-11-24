@@ -29,7 +29,6 @@
         android:layout_marginRight="0dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Ivesti darbuotojo varda"
         android:textAppearance="@android:style/TextAppearance.Holo.Medium" />
 
     <EditText
@@ -42,7 +41,6 @@
         android:layout_marginTop="95dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Ivesti darbuotojo pavarde"
         android:textAppearance="@android:style/TextAppearance.Holo.Medium"
         android:layout_marginLeft="0dp"
         android:layout_alignLeft="@+id/DarbuotojoVardas" />

@@ -8,7 +8,7 @@ public class Darbuotojas {
             String priskirtaKategorija;
             ArrayList<String> priskirtosUzduotys;
     public String toString() {
-        return String.format(" %s, %s, %s, %s " ,vardas, pavarde, priskirtaKategorija);
+        return String.format(" %s  %s  %s " ,vardas, pavarde, priskirtaKategorija);
     }
 
 }

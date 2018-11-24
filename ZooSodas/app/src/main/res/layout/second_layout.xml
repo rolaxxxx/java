@@ -14,7 +14,6 @@
         android:layout_marginTop="59dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Ivesti gyvunu kategorija"
         android:visibility="visible" />
 
     <Button

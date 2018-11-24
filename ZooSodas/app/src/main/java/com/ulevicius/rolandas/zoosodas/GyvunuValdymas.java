@@ -35,9 +35,18 @@ public class GyvunuValdymas extends Fragment implements AdapterView.OnItemSelect
         myView = inflater.inflate(R.layout.second_layout, container, false);
         button = (Button) myView.findViewById(R.id.ikeltiGyvuna);
         txt = (EditText)myView.findViewById(R.id.gyvuno_kategorija);
+        txt.setHint("Ivesti gyvunu kategorija");
 
         gyvunai.add("");
-
+        txt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus)
+                    txt.setHint("");
+                else
+                    txt.setHint("Ivesti gyvunu kategorija");
+            }
+        });
         button.setOnClickListener(new View.OnClickListener()
         {
             @Override
