@@ -50,8 +50,7 @@ public class Darbuotojas {
                     index++;
      }
       Collections.sort(darbuotojas,new DarbuotojasComparator());
-      System.out.println(darbuotojas.get(0));
-      for(int i=0;i<index;i++){
+      for(int i=0;i<darbuotojas.size();i++){
           System.out.println(darbuotojas.get(i));
       }
       Scanner sc=new Scanner(System.in);

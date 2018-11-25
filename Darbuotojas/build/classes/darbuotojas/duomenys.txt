@@ -1,5 +1,5 @@
 Petras/konsultantas/1997/1580.56 
 Jonas/vedejas/1998/1541.56 
 Tomas/informatikas/1952/158.56 
-Petras mokytojas/1996/700.56 
-Petras/pardavejas/1995/190.56 
+Antanas mokytojas/1995/700.56 
+Romas/pardavejas/1995/190.56 

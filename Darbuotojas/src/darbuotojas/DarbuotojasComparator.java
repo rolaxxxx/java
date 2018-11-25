@@ -6,7 +6,6 @@
 package darbuotojas;
 
 import java.util.Comparator;
-
 /**
  *
  * @author rolandas
@@ -26,6 +25,5 @@ public class DarbuotojasComparator implements Comparator<Darbuotojas> {
                else return r1.pareigos.compareTo(r2.pareigos);
            }
             return Double.compare(r1.atlygis, r2.atlygis);
-    
 }
 }
