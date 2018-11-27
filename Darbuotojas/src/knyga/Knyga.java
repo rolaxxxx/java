@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package darbuotojas;
+package knyga;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -19,37 +19,35 @@ import java.util.StringTokenizer;
  *
  * @author rolandas
  */
-public class Darbuotojas {
-     String vardas;
-     String pareigos;
-
-   
-     int gim_met;
-     double atlygis;
+public class Knyga {
+     String leidykla;
+     String pavadinimas;
+     int leidimoMetai;
+     double kaina;
      @Override
      public String toString() { 
-    return " " + this.vardas.toUpperCase() + " " + this.pareigos.toUpperCase() + " " + this.gim_met + " " + Math.round(this.atlygis* 100.0 ) /100.0  ;
+    return " " + this.leidykla.toUpperCase() + " " + this.pavadinimas.toUpperCase() + " " + this.leidimoMetai + " " + Math.round(this.kaina* 100.0 ) /100.0  ;
     }
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
-       String content = new Scanner(new File("C:\\Users\\rolandas\\Documents\\NetBeansProjects\\Darbuotojas\\src\\darbuotojas\\duomenys.txt")).useDelimiter("\\Z").next();
+       String content = new Scanner(new File("C:\\Users\\rolandas\\Documents\\NetBeansProjects\\Knyga\\src\\duomenys.txt")).useDelimiter("\\Z").next();
                 //System.out.println(content);
                 int index=0;
-            StringTokenizer st = new StringTokenizer(content, "/ ");
-            List<Darbuotojas> darbuotojas = new ArrayList<>();
+            StringTokenizer st = new StringTokenizer(content, "/");
+            List<Knyga> darbuotojas = new ArrayList<>();
             
                 while (st.hasMoreTokens()&&index<5) {
-                    Darbuotojas tempdarbuotojas= new Darbuotojas();
-                    tempdarbuotojas.vardas=st.nextToken();
+                    Knyga tempknyga= new Knyga();
+                    tempknyga.leidykla=st.nextToken();
                     //System.out.println(tempdarbuotojas.vardas);
-                    tempdarbuotojas.pareigos=st.nextToken();
-                    tempdarbuotojas.gim_met=Integer.parseInt(st.nextToken());
-                    tempdarbuotojas.atlygis=Double.parseDouble(st.nextToken());
+                    tempknyga.pavadinimas=st.nextToken();
+                    tempknyga.leidimoMetai=Integer.parseInt(st.nextToken());
+                    tempknyga.kaina=Double.parseDouble(st.nextToken());
                     //System.out.println(tempdarbuotojas.atlygis);
-                    darbuotojas.add(index, tempdarbuotojas);   
-                    System.out.println(darbuotojas.get(index).gim_met);
+                    darbuotojas.add(index, tempknyga);   
+                    //System.out.println(darbuotojas.get(index).gim_met);
                     index++;
      }
-      Collections.sort(darbuotojas,new DarbuotojasComparator());
+     /* Collections.sort(darbuotojas,new KnygaComparator());
       for(int i=0;i<darbuotojas.size();i++){
           System.out.println(darbuotojas.get(i));
       }
@@ -61,6 +59,7 @@ public class Darbuotojas {
               writer.println(darbuotojas.get(i));
       }
       writer.close();
+*/
     }
     
 }

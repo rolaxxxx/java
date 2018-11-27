@@ -14,6 +14,15 @@
         android:layout_marginTop="59dp"
         android:ems="10"
         android:inputType="textPersonName"
+         />
+    <EditText
+        android:id="@+id/gyvuno_rusis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gyvuno_kategorija"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textPersonName"
         android:visibility="visible" />
 
     <Button
@@ -68,5 +77,7 @@
         android:text="Patvirtinkite pasirinkima"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="81dp" />
+
+
 
 </RelativeLayout>

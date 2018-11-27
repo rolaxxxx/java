@@ -22,11 +22,10 @@ import java.util.List;
 
 public class GyvunuValdymas extends Fragment implements AdapterView.OnItemSelectedListener, Serializable {
     View myView;
-    public static ArrayList<String> gyvunai= new ArrayList<>();
-    public ArrayList<String> getGyvunai() {
-        return gyvunai;
-    }
-    EditText txt;
+    public static ArrayList<Gyvunas> gyvunai= new ArrayList<>();
+
+    EditText txt,txt2;
+    Gyvunas blankGyvunas= new Gyvunas();
 
     Button button;
     @Nullable
@@ -35,9 +34,13 @@ public class GyvunuValdymas extends Fragment implements AdapterView.OnItemSelect
         myView = inflater.inflate(R.layout.second_layout, container, false);
         button = (Button) myView.findViewById(R.id.ikeltiGyvuna);
         txt = (EditText)myView.findViewById(R.id.gyvuno_kategorija);
+        txt2=(EditText)myView.findViewById(R.id.gyvuno_rusis);
         txt.setHint("Ivesti gyvunu kategorija");
+        txt2.setHint("Ivesti gyvunu rusi");
 
-        gyvunai.add("");
+        blankGyvunas.kategorija="";
+        blankGyvunas.rusis="";
+        gyvunai.add(blankGyvunas);
         txt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -47,19 +50,32 @@ public class GyvunuValdymas extends Fragment implements AdapterView.OnItemSelect
                     txt.setHint("Ivesti gyvunu kategorija");
             }
         });
+        txt2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus)
+                    txt2.setHint("");
+                else
+                    txt2.setHint("Ivesti gyvunu rusi");
+            }
+        });
         button.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
+                Gyvunas tempGyvunas = new Gyvunas();
                 String getInput= txt.getText().toString();
-                gyvunai.add(getInput);
+                String getInput2= txt2.getText().toString();
+                tempGyvunas.kategorija=getInput;
+                tempGyvunas.rusis=getInput2;
+                gyvunai.add(tempGyvunas);
                 Toast.makeText(getActivity().getApplicationContext(), "gyvunas ikeltas " + gyvunai.size(), Toast.LENGTH_LONG).show();
             }
         });
 
         Spinner spinner2 = myView.findViewById(R.id.GyvunuKategorijosIskelimui);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity().getBaseContext(), android.R.layout.simple_list_item_1, gyvunai);
+        ArrayAdapter<Gyvunas> adapter = new ArrayAdapter<>(getActivity().getBaseContext(), android.R.layout.simple_list_item_1, gyvunai);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setOnItemSelectedListener(this);
         spinner2.setAdapter(adapter);

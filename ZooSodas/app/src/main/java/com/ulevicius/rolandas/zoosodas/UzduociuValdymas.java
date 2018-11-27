@@ -26,7 +26,7 @@ public class UzduociuValdymas extends Fragment implements AdapterView.OnItemSele
     public static ArrayList<Uzduotis> uzduotys= new ArrayList<>();
     ArrayList<Darbuotojas>persortintiDarbuotojai=new ArrayList<>();
     ArrayList<Darbuotojas> darbuotojaiUzduotims = new ArrayList<>();
-    ArrayList<String> gyvunaiUzduotims = new ArrayList<>();
+    ArrayList<Gyvunas> gyvunaiUzduotims = new ArrayList<>();
     Darbuotojas blankWorker=new Darbuotojas();
     EditText ivestaUzduotis;
     @Nullable
@@ -44,7 +44,7 @@ public class UzduociuValdymas extends Fragment implements AdapterView.OnItemSele
         darbuotojaiUzduotims.addAll(DarbuotojuValdymas.darbuotojai);
 
         Spinner spinner = myView.findViewById(R.id.specifinisGyvunas);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity().getBaseContext(), android.R.layout.simple_list_item_1,gyvunaiUzduotims);
+        ArrayAdapter<Gyvunas> adapter = new ArrayAdapter<>(getActivity().getBaseContext(), android.R.layout.simple_list_item_1,gyvunaiUzduotims);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setOnItemSelectedListener(this);
         spinner.setAdapter(adapter);
@@ -78,14 +78,13 @@ public class UzduociuValdymas extends Fragment implements AdapterView.OnItemSele
             String text = adapterView.getItemAtPosition(i).toString();
             Button button = (Button) myView.findViewById(R.id.issaugotiUzduoti);
             Spinner specG = myView.findViewById(R.id.specifinisGyvunas);
-
             String SpecGyvunas=specG.getSelectedItem().toString();
             if(!SpecGyvunas.isEmpty())
             {
                 persortintiDarbuotojai.clear();
                 persortintiDarbuotojai.add(blankWorker);
                 for(Darbuotojas tempDarbuotojas:darbuotojaiUzduotims){
-                    if(SpecGyvunas==tempDarbuotojas.priskirtaKategorija)
+                    if(SpecGyvunas.equals(tempDarbuotojas.priskirtaKategorija))
                         persortintiDarbuotojai.add(tempDarbuotojas);
                 }
             }

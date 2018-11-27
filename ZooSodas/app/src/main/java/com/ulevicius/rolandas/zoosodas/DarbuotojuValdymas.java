@@ -26,6 +26,7 @@ public class DarbuotojuValdymas extends Fragment  implements AdapterView.OnItemS
     public static  ArrayList<Darbuotojas> darbuotojai= new ArrayList<>();
     Darbuotojas temporDarb=new Darbuotojas();
     EditText vardas;
+    ArrayList<Gyvunas> gyvunaikategorijai = new ArrayList<>();
     EditText pavarde;
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Nullable
@@ -37,11 +38,11 @@ public class DarbuotojuValdymas extends Fragment  implements AdapterView.OnItemS
          vardas.setHint("Iveskite Vartotojo varda");
          pavarde.setHint("Iveskite Vartotojo pavarde");
 
-         temporDarb.vardas=" ";
-         temporDarb.pavarde=" ";
-         temporDarb.priskirtaKategorija=" ";
+         temporDarb.vardas="";
+         temporDarb.pavarde="";
+         temporDarb.priskirtaKategorija="";
         darbuotojai.add(0,temporDarb);
-         ArrayList<String> gyvunaikategorijai = new ArrayList<>();
+
          gyvunaikategorijai.addAll(GyvunuValdymas.gyvunai);
 
         vardas.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -63,7 +64,7 @@ public class DarbuotojuValdymas extends Fragment  implements AdapterView.OnItemS
             }
         });
             Spinner spinner = myView.findViewById(R.id.GyvunuKategorijosDarbuotojuKlaseje);
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity().getBaseContext(), android.R.layout.simple_list_item_1, gyvunaikategorijai);
+            ArrayAdapter<Gyvunas> adapter = new ArrayAdapter<>(getActivity().getBaseContext(), android.R.layout.simple_list_item_1, gyvunaikategorijai);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setOnItemSelectedListener(this);
             spinner.setAdapter(adapter);
@@ -87,7 +88,7 @@ public class DarbuotojuValdymas extends Fragment  implements AdapterView.OnItemS
                  pavarde = (EditText)myView.findViewById(R.id.DarbuotojoPavarde);
                 String getVardas= vardas.getText().toString();
                 String getPavarde= pavarde.getText().toString();
-                String getKategorija= GyvunuValdymas.gyvunai.get(i);
+                String getKategorija= gyvunaikategorijai.get(i).toString();
                 tempdarbuotojas.vardas=getVardas;
                 tempdarbuotojas.pavarde=getPavarde;
                 tempdarbuotojas.priskirtaKategorija=getKategorija;

@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package darbuotojas;
+package knyga;
 
 import java.util.Comparator;
 /**
  *
  * @author rolandas
  */
-public class DarbuotojasComparator implements Comparator<Darbuotojas> {
-        @Override
-        public int compare(Darbuotojas r1, Darbuotojas r2) {
-           if(r1.atlygis==r2.atlygis)
+//public class KnygaComparator implements Comparator<Knyga> {
+      /*  @Override
+        public int compare(Knyga r1, Knyga r2) {
+           if(r1.==r2.atlygis)
            {
                if(r1.pareigos.equals(r2.pareigos))
                {
@@ -26,4 +26,5 @@ public class DarbuotojasComparator implements Comparator<Darbuotojas> {
            }
             return Double.compare(r1.atlygis, r2.atlygis);
 }
-}
+*/
+//}
