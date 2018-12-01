@@ -26,7 +26,7 @@ public class UzduociuValdymas extends Fragment implements AdapterView.OnItemSele
     public static ArrayList<Uzduotis> uzduotys= new ArrayList<>();
     ArrayList<Darbuotojas>persortintiDarbuotojai=new ArrayList<>();
     ArrayList<Darbuotojas> darbuotojaiUzduotims = new ArrayList<>();
-    ArrayList<Gyvunas> gyvunaiUzduotims = new ArrayList<>();
+    ArrayList<String> gyvunaiUzduotims = new ArrayList<>();
     Darbuotojas blankWorker=new Darbuotojas();
     EditText ivestaUzduotis;
     @Nullable
@@ -37,14 +37,17 @@ public class UzduociuValdymas extends Fragment implements AdapterView.OnItemSele
         ivestaUzduotis.setHint("Iveskite uzduoti pasirinktam darbuotojui");
         blankWorker.priskirtaKategorija="";
         blankWorker.vardas="";
+        final GyvunaiRepository gyvunaiRepository = new GyvunaiRepository(getActivity().getApplicationContext());
         blankWorker.pavarde="";
         persortintiDarbuotojai.add(0, blankWorker);
-        gyvunaiUzduotims.addAll(GyvunuValdymas.gyvunai);
+        gyvunaiUzduotims.clear();
+        gyvunaiUzduotims.add("");
+        gyvunaiRepository.ShowGyvunai(gyvunaiUzduotims);
 
         darbuotojaiUzduotims.addAll(DarbuotojuValdymas.darbuotojai);
 
         Spinner spinner = myView.findViewById(R.id.specifinisGyvunas);
-        ArrayAdapter<Gyvunas> adapter = new ArrayAdapter<>(getActivity().getBaseContext(), android.R.layout.simple_list_item_1,gyvunaiUzduotims);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity().getBaseContext(), android.R.layout.simple_list_item_1,gyvunaiUzduotims);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setOnItemSelectedListener(this);
         spinner.setAdapter(adapter);
@@ -78,7 +81,7 @@ public class UzduociuValdymas extends Fragment implements AdapterView.OnItemSele
             String text = adapterView.getItemAtPosition(i).toString();
             Button button = (Button) myView.findViewById(R.id.issaugotiUzduoti);
             Spinner specG = myView.findViewById(R.id.specifinisGyvunas);
-            String SpecGyvunas=specG.getSelectedItem().toString();
+            String SpecGyvunas=gyvunaiUzduotims.get(i);
             if(!SpecGyvunas.isEmpty())
             {
                 persortintiDarbuotojai.clear();
@@ -115,5 +118,6 @@ public class UzduociuValdymas extends Fragment implements AdapterView.OnItemSele
         public void onNothingSelected (AdapterView < ? > adapterView){
 
         }
+
     }
 

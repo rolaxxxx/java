@@ -26,7 +26,7 @@ public class DarbuotojuValdymas extends Fragment  implements AdapterView.OnItemS
     public static  ArrayList<Darbuotojas> darbuotojai= new ArrayList<>();
     Darbuotojas temporDarb=new Darbuotojas();
     EditText vardas;
-    ArrayList<Gyvunas> gyvunaikategorijai = new ArrayList<>();
+    ArrayList<String> gyvunaikategorijai = new ArrayList<>();
     EditText pavarde;
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Nullable
@@ -37,13 +37,14 @@ public class DarbuotojuValdymas extends Fragment  implements AdapterView.OnItemS
          pavarde = (EditText)myView.findViewById(R.id.DarbuotojoPavarde);
          vardas.setHint("Iveskite Vartotojo varda");
          pavarde.setHint("Iveskite Vartotojo pavarde");
-
+        final GyvunaiRepository gyvunaiRepository = new GyvunaiRepository(getActivity().getApplicationContext());
          temporDarb.vardas="";
          temporDarb.pavarde="";
          temporDarb.priskirtaKategorija="";
         darbuotojai.add(0,temporDarb);
-
-         gyvunaikategorijai.addAll(GyvunuValdymas.gyvunai);
+        gyvunaikategorijai.clear();
+        gyvunaikategorijai.add("");
+         gyvunaiRepository.ShowGyvunai(gyvunaikategorijai);
 
         vardas.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -64,7 +65,7 @@ public class DarbuotojuValdymas extends Fragment  implements AdapterView.OnItemS
             }
         });
             Spinner spinner = myView.findViewById(R.id.GyvunuKategorijosDarbuotojuKlaseje);
-            ArrayAdapter<Gyvunas> adapter = new ArrayAdapter<>(getActivity().getBaseContext(), android.R.layout.simple_list_item_1, gyvunaikategorijai);
+            ArrayAdapter adapter = new ArrayAdapter<>(getActivity().getBaseContext(), android.R.layout.simple_list_item_1, gyvunaikategorijai);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setOnItemSelectedListener(this);
             spinner.setAdapter(adapter);
