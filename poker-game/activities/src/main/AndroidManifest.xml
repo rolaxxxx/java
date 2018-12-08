@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.delta.activities" >
+<uses-permission android:name="android.permission.INTERNET"/>
+
+
+
+    <application
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="Poker game"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.delta.activities.SecondActivity"
+            android:label="Poker game" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".FirstActivity"
+            android:label="Poker game"
+           />
+
+
+
+    </application>
+
+</manifest>
