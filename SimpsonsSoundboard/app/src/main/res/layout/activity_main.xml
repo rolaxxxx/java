@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+
+    android:layout_alignParentBottom="true">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/stop"
+        android:layout_width="500px"
+        android:layout_height="200px"
+
+
+        android:layout_gravity="end|bottom"
+
+        android:src="@drawable/stop" />
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#A4A4A4"
+
+    android:orientation="vertical"
+    android:fillViewport="true"
+    android:scrollbars= "none"
+    tools:context="com.SimpsonsSoundboard213.rolandas.simpsonssoundboard.MainActivity">
+
+    >
+    <RelativeLayout
+        android:id="@+id/scrollView1"
+
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+
+        <Button
+            android:id="@+id/doup"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="Homer1" />
+
+        <Button
+            android:id="@+id/flander1"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/doup"
+            android:layout_toRightOf="@+id/doup"
+            android:text="Flanders1" />
+
+        <Button
+            android:id="@+id/marge1"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+            android:layout_below="@+id/flander1"
+            android:layout_toEndOf="@+id/doup"
+            android:layout_toRightOf="@+id/doup"
+            android:text="Nelson haha" />
+
+        <Button
+            android:id="@+id/marge3"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/flander1"
+            android:layout_toRightOf="@+id/flander1"
+            android:text="Marge (angry)" />
+
+        <Button
+            android:id="@+id/apu1"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/doup"
+            android:text="Apu thank you come again " />
+
+        <Button
+            android:id="@+id/marge4"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+            android:layout_below="@+id/marge3"
+            android:layout_toEndOf="@+id/flander1"
+            android:layout_toRightOf="@+id/flander1"
+            android:text="Mr Burns excelent" />
+
+        <Button
+            android:id="@+id/marge5"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/marge1"
+            android:text="Smithers moan" />
+
+        <Button
+            android:id="@+id/marge6"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+
+            android:layout_below="@+id/marge1"
+            android:layout_toEndOf="@+id/marge5"
+            android:layout_toRightOf="@+id/marge5"
+            android:text="Dumbsville" />
+
+        <Button
+            android:id="@+id/marge7"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+            android:layout_below="@+id/marge1"
+            android:layout_toEndOf="@+id/marge6"
+            android:layout_toRightOf="@+id/marge6"
+            android:text="Apu party" />
+
+        <Button
+            android:id="@+id/marge8"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+
+            android:layout_below="@+id/marge5"
+            android:text="Homer no beer" />
+
+        <Button
+            android:id="@+id/marge9"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+            android:layout_below="@+id/marge6"
+            android:layout_toEndOf="@+id/marge8"
+            android:layout_toRightOf="@+id/marge8"
+            android:text="Unprocessed fish sticks" />
+
+        <Button
+            android:id="@+id/marge10"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+            android:layout_below="@+id/marge7"
+            android:layout_toEndOf="@+id/marge9"
+            android:layout_toRightOf="@+id/marge9"
+            android:text="Organized crime" />
+
+        <Button
+            android:id="@+id/marge11"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/marge8"
+            android:text="Mmm candy" />
+
+        <Button
+            android:id="@+id/marge12"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+            android:layout_below="@+id/marge8"
+            android:layout_toEndOf="@+id/marge11"
+            android:layout_toRightOf="@+id/marge11"
+            android:text="Mmm forbidden doughnut" />
+
+        <Button
+            android:id="@+id/marge13"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+            android:layout_alignLeft="@+id/marge10"
+            android:layout_alignStart="@+id/marge10"
+            android:layout_below="@+id/marge9"
+            android:text="Mmm Marge" />
+        <Button
+            android:id="@+id/marge14"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/marge11"
+            android:text="Bart prank call 1" />
+
+        <Button
+            android:id="@+id/marge15"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+            android:layout_alignBaseline="@+id/marge14"
+            android:layout_alignBottom="@+id/marge14"
+            android:layout_toLeftOf="@+id/marge13"
+            android:layout_toStartOf="@+id/marge13"
+            android:text="Bart prank call 2" />
+
+
+
+        <Button
+            android:id="@+id/marge17"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+            android:layout_alignBaseline="@+id/marge15"
+            android:layout_alignBottom="@+id/marge15"
+            android:layout_toEndOf="@+id/marge12"
+            android:layout_toRightOf="@+id/marge12"
+            android:text="Bart prank call 3" />
+
+        <Button
+            android:id="@+id/marge18"
+            android:layout_width="350px"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+
+            android:layout_below="@+id/marge14"
+            android:text="Bart prank call 4" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="29dp"
+            android:layout_marginRight="29dp"
+
+            android:layout_below="@id/marge18"
+
+            app:srcCompat="@android:drawable/alert_dark_frame" />
+
+
+    </RelativeLayout>
+<com.airpush.injector.internal.ads.AirPushBannerView
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+
+</ScrollView>
+
+
+
+
+
+
+</RelativeLayout>
