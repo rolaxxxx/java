@@ -70,6 +70,12 @@ public class DarbuotojuValdymas extends Fragment  implements AdapterView.OnItemS
             spinner.setOnItemSelectedListener(this);
             spinner.setAdapter(adapter);
 
+        Spinner spinner2 = myView.findViewById(R.id.Darbuotojai);
+        ArrayAdapter adapter2 = new ArrayAdapter<>(getActivity().getBaseContext(), android.R.layout.simple_list_item_1,darbuotojai);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner2.setOnItemSelectedListener(this);
+        spinner2.setAdapter(adapter2);
+
 
         return myView;
 
@@ -80,6 +86,7 @@ public class DarbuotojuValdymas extends Fragment  implements AdapterView.OnItemS
         String text = adapterView.getItemAtPosition(i).toString();
         Toast.makeText(adapterView.getContext(), "pasirinktas itemas " + text, Toast.LENGTH_SHORT).show();
         Button button = (Button) myView.findViewById(R.id.Idarbinti_Darbuotoja);
+        Button button2 =(Button) myView.findViewById(R.id.DarbuotojuAtleidimas);
 
         button.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -94,7 +101,13 @@ public class DarbuotojuValdymas extends Fragment  implements AdapterView.OnItemS
                 tempdarbuotojas.pavarde=getPavarde;
                 tempdarbuotojas.priskirtaKategorija=getKategorija;
                 darbuotojai.add(tempdarbuotojas);
-                Toast.makeText(getActivity().getBaseContext(), "Darbuotojas idarbintas " , Toast.LENGTH_LONG).show();
+               // Toast.makeText(getActivity().getBaseContext(), "Darbuotojas idarbintas " , Toast.LENGTH_LONG).show();
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                darbuotojai.remove(i);
             }
         });
 

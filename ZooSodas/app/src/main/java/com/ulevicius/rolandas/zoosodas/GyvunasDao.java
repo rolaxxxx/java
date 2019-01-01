@@ -14,7 +14,7 @@ public interface GyvunasDao {
     List<String> Kategorija();
 
     @Query("SELECT * FROM gyvunas")
-    List<Gyvunas> getGyvunai();
+     List<Gyvunas> getGyvunai();
 
     @Query("SELECT * FROM gyvunas WHERE uid IN (:gyvunaiIds)")
     List<Gyvunas> loadAllByIds(int[] gyvunaiIds);

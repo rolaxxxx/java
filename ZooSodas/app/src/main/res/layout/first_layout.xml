@@ -61,6 +61,21 @@
         android:text="Gyvunai"
         android:textColor="#000000" />
 
+    <Spinner
+        android:id="@+id/Darbuotojai"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_alignParentStart="true"
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="406dp"
+        android:padding="8dp"
+        android:text="Darbuotojai"
+        android:textColor="#000000" />
+
     <TextView
         android:id="@+id/textView5"
         android:layout_width="match_parent"
@@ -73,6 +88,15 @@
         android:textAppearance="@android:style/TextAppearance.Holo.Medium"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="0dp" />
+
+    <Button
+        android:id="@+id/DarbuotojuAtleidimas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Idarbinti_Darbuotoja"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:text="Atleisti" />
 
 
 </RelativeLayout>

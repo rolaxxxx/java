@@ -50,7 +50,7 @@ public class UzduociuRodymas extends Fragment implements AdapterView.OnItemSelec
             });
             index++;
             btn.setText("Patvirtinti Uzduoti");
-
+            btn2.setText("Istrinti uzduoti");
             sc.addView(view);
 
         }
